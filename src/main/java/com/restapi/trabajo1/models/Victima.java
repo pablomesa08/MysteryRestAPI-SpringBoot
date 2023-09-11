@@ -5,66 +5,65 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+
 @Entity
 @Table(name = "victimas")
-public class Victima implements Serializable{
+public class Victima implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private String nombre;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private String apellido;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private Integer edad;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private String sexo;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private String ocupacion;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private String lugarMuerte;
 
-    @Column
+    @Column(nullable = false)
     @Getter
     @Setter
     private String fechaMuerte;
 
     @ManyToOne
-    @JoinColumn(name = "familia_id")
+    @JoinColumn(name = "familia_id", nullable = false)
     @Getter
     @Setter
     private Familia familia;
 
     @ManyToOne
-    @JoinColumn(name = "caso_id")
+    @JoinColumn(name = "caso_id", nullable = false)
     @Getter
     @Setter
     private Caso caso;
 
     @ManyToOne
-    @JoinColumn(name = "formaAsesinato_id")
+    @JoinColumn(name = "formaAsesinato_id", nullable = false)
     @Getter
     @Setter
     private FormaAsesinato formaAsesinato;

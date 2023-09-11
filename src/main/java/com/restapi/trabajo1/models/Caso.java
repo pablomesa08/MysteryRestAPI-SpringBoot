@@ -1,6 +1,7 @@
 package com.restapi.trabajo1.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,20 +18,23 @@ public class Caso implements Serializable {
     @Setter
     private Long id;
 
-    @Column
+    @Size(min = 4, max = 50)
     @Getter
     @Setter
+    @Column(nullable = false)
     private String nombre;
 
-    @Column
     @Getter
     @Setter
+    @Column(nullable = false)
     private String fecha;
 
-    @Column
     @Getter
     @Setter
+    @Column(nullable = false)
+    @Size(min = 4, max = 150)
     private String descripcion;
+
 
     @OneToMany
     private Set<Victima> victimas = new HashSet<>();

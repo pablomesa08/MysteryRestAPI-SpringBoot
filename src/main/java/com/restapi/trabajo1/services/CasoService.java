@@ -1,9 +1,10 @@
 package com.restapi.trabajo1.services;
 
-import com.restapi.trabajo1.models.Caso;
-import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.restapi.trabajo1.dao.ICasoRepository;
+import com.restapi.trabajo1.models.Caso;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 
